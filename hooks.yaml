@@ -3,113 +3,111 @@
     description: "Runs autopep8 over python source. (You'll want args: [-i] when using this hook, see .pre-commit-config.yaml for an example.)"
     entry: autopep8-wrapper
     language: python
-    files: \.py$
+    types: [python]
     args: [-i]
 -   id: check-added-large-files
     name: Check for added large files
     description: Prevent giant files from being committed
     entry: check-added-large-files
     language: python
-    # Match all files
-    files: ''
+    types: [file]
 -   id: check-ast
     name: Check python ast
     description: Simply check whether the files parse as valid python.
     entry: check-ast
     language: python
-    files: '\.py$'
+    types: [python]
 -   id: check-case-conflict
     name: Check for case conflicts
     description: Check for files that would conflict in case-insensitive filesystems
     entry: check-case-conflict
     language: python
-    # Match all files
-    files: ''
+    types: [file]
 -   id: check-docstring-first
     name: Check docstring is first
     description: Checks a common error of defining a docstring after code.
     entry: check-docstring-first
     language: python
-    files: \.py$
+    types: [python]
 -   id: check-json
     name: Check JSON
     description: This hook checks json files for parseable syntax.
     entry: check-json
     language: python
-    files: \.json$
+    types: [json]
 -   id: pretty-format-json
     name: Pretty format JSON
     description: This hook sets a standard for formatting JSON files.
     entry: pretty-format-json
     language: python
-    files: \.json$
+    types: [json]
 -   id: check-merge-conflict
     name: Check for merge conflicts
     description: Check for files that contain merge conflict strings.
     entry: check-merge-conflict
     language: python
-    # Match all files
-    files: ''
+    types: [text]
 -   id: check-xml
     name: Check Xml
     description: This hook checks xml files for parseable syntax.
     entry: check-xml
     language: python
-    files: \.xml$
+    types: [xml]
 -   id: check-yaml
     name: Check Yaml
     description: This hook checks yaml files for parseable syntax.
     entry: check-yaml
     language: python
-    files: \.(yaml|yml|eyaml)$
+    types: [yaml]
 -   id: debug-statements
     name: Debug Statements (Python)
     description: This hook checks that debug statements (pdb, ipdb, pudb) are not imported on commit.
     entry: debug-statement-hook
     language: python
-    files: \.py$
+    types: [python]
 -   id: detect-aws-credentials
     name: Detect AWS Credentials
     description: Detects *your* aws credentials from the aws cli credentials file
     entry: detect-aws-credentials
     language: python
-    files: ''
+    types: [file]
 -   id: detect-private-key
     name: Detect Private Key
     description: Detects the presence of private keys
     entry: detect-private-key
     language: python
-    files: ''
+    types: [text]
 -   id: double-quote-string-fixer
     name: Fix double quoted strings
     description: This hook replaces double quoted strings with single quoted strings
     entry: double-quote-string-fixer
     language: python
-    files: \.py$
+    types: [python]
 -   id: end-of-file-fixer
     name: Fix End of Files
     description: Ensures that a file is either empty, or ends with one newline.
     entry: end-of-file-fixer
     language: python
-    files: \.(c|cpp|html|erb|slim|haml|ejs|jade|js|coffee|json|rb|md|py|css|scss|less|sh|tmpl|txt|yaml|yml|pp)$
+    types: [text]
 -   id: flake8
     name: Flake8
     description: This hook runs flake8.
     entry: flake8
     language: python
-    files: \.py$
+    types: [python]
 -   id: name-tests-test
     name: Tests should end in _test.py
     description: This verifies that test files are named correctly
     entry: name-tests-test
     language: python
-    files: tests/.+\.py$
+    files: tests/.+$
+    types: [python]
 -   id: pyflakes
     name: Pyflakes (DEPRECATED, use flake8)
     description: This hook runs pyflakes. (This is deprecated, use flake8).
     entry: pyflakes
     language: python
-    files: \.py$
+    types: [python]
 -   id: requirements-txt-fixer
     name: Fix requirements.txt
     description: Sorts entries in requirements.txt
@@ -121,4 +119,4 @@
     description: This hook trims trailing whitespace.
     entry: trailing-whitespace-fixer
     language: python
-    files: \.(c|cpp|html|erb|slim|haml|ejs|jade|js|coffee|json|rb|md|py|css|scss|less|sh|tmpl|txt|yaml|yml|pp)$
+    types: [text]
